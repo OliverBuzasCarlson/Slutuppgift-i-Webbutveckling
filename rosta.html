@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rösta - Filmhörnan</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Filmhörnan</h1>
+        <nav aria-label="Huvudmeny">
+            <ul class="menu">
+                <li><a href="hem.html">Hem</a></li>
+                <li><a href="topp10.html">Topp 10</a></li>
+                <li><a href="recensioner.html">Recensioner</a></li>
+                <li><a href="trailers.html">Trailers</a></li>
+                <li><a href="rosta.html">Rösta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="vote-layout">
+        <section class="vote-hero">
+            <p class="tagline">Dela dina filmtankar</p>
+            <h2>Rösta och tyck till</h2>
+            <p> Här kan du skicka in dina tankar, betyg och idéer om filmer du har sett.</p>
+        </section>
+        <section class="form-section">
+            <h2>Skicka in din filmåsikt</h2>
+            <form class="vote-form" onsubmit="showMessage(event)">
+                <fieldset>
+                    <legend>Dina uppgifter</legend>
+                    <label for="name">Namn</label>
+                    <input type="text" id="name" name="name" placeholder="Skriv ditt namn" required>
+                    <label for="email">E-post</label>
+                    <input type="email" id="email" name="email" placeholder="namn@email.com" required>
+                    <label for="age">Ålder</label>
+                    <input type="number" id="age" name="age" min="10" max="100">
+                </fieldset>
+                <fieldset>
+                    <legend>Din film</legend>
+                    <label for="movie">Vilken film gäller det?</label>
+                    <input type="text" id="movie" name="movie" placeholder="Exempel: Interstellar" required>
+                    <label for="genre">Välj genre</label>
+                    <select id="genre" name="genre" required>
+                        <option value="">Välj en genre</option>
+                        <option value="action">Action</option>
+                        <option value="drama">Drama</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="science-fiction">Science Fiction</option>
+                        <option value="komedi">Komedi</option>
+                        <option value="thriller">Thriller</option>
+                    </select>
+                    <label for="rating">
+                        Betyg:
+                        <span id="rating-value">5</span>/10
+                    </label>
+                    <input type="range" id="rating" name="rating" min="1" max="10" value="5">
+                    <p class="form-question">Skulle du rekommendera filmen?</p>
+                    <div class="radio-group">
+                        <input type="radio" id="yes" name="recommend" value="ja" required>
+                        <label for="yes">Ja</label>
+                        <input type="radio" id="no" name="recommend" value="nej">
+                        <label for="no">Nej</label>
+                    </div>
+                    <p class="form-question">Vad passade bäst in på filmen?</p>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="exciting" name="description" value="spännande">
+                        <label for="exciting">Spännande</label>
+                        <input type="checkbox" id="emotional" name="description" value="känslosam">
+                        <label for="emotional">Känslosam</label>
+                        <input type="checkbox" id="funny" name="description" value="rolig">
+                        <label for="funny">Rolig</label>
+                    </div>
+                    <label for="watch-date">När såg du filmen?</label>
+                    <input type="date" id="watch-date" name="watch-date">
+                    <label for="color">Vilken färg passar filmens känsla?</label>
+                    <input type="color" id="color" name="color" value="#f4c542">
+                    <label for="review">Skriv dina tankar</label>
+                    <textarea id="review" name="review" rows="6"
+                        placeholder="Skriv vad du tyckte om filmen..." required></textarea>
+                </fieldset>
+                <fieldset>
+                    <legend>Skicka in</legend>
+                    <label for="poster">Ladda upp en egen bild eller poster</label>
+                    <input type="file" id="poster" name="poster">
+                    <label for="password">Skapa ett lösenord för ditt inlägg</label>
+                    <input type="password" id="password" name="password"
+                        placeholder="Minst 6 tecken">
+                    <div class="terms-box">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms"> Jag godkänner att min åsikt får visas på sidan </label>
+                    </div>
+                    <div class="form-buttons">
+                        <input type="submit" value="Skicka in">
+                        <input type="reset" value="Rensa formulär">
+                    </div>
+                    <p id="form-message"></p>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 Filmhörnan</p>
+    </footer>
+    <script>
+        const rating = document.querySelector("#rating");
+        const ratingValue = document.querySelector("#rating-value");
+        const formMessage = document.querySelector("#form-message");
+
+        rating.addEventListener("input", function () {
+            ratingValue.textContent = rating.value;
+        });
+
+        function showMessage(event) {
+
+            event.preventDefault();
+
+            formMessage.textContent =
+                "Din recension är inskickad!";
+        }
+    </script>
+</body>
+</html>
