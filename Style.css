@@ -1,0 +1,440 @@
+/* GLOBAL STYLING */
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    background-color: #111111;
+    color: white;
+}
+
+header {
+    background-color: black;
+    text-align: center;
+    padding: 1.25rem;
+}
+
+header h1 {
+    margin: 0 0 1rem 0;
+}
+
+footer {
+    background-color: black;
+    text-align: center;
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+/*NAVIGATION / MENY*/
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin: 0 0.9375rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 0.75rem;
+}
+
+.menu a:link {
+    color: white;
+}
+
+.menu a:visited {
+    color: #dddddd;
+}
+
+.menu a:hover {
+    color: #f4c542;
+}
+
+.menu a:active {
+    color: orange;
+}
+
+.menu a:focus {
+    outline: 0.125rem solid white;
+    outline-offset: 0.125rem;
+}
+
+/*GEMENSAMMA KLASSER*/
+.tagline {
+    color: gray;
+}
+
+.button {
+    display: inline-block;
+    background-color: #f4c542;
+    color: black;
+    text-decoration: none;
+    padding: 0.625rem 1rem;
+    margin: 0.3125rem;
+    border-radius: 0.25rem;
+}
+
+.button:hover {
+    background-color: rgb(255, 166, 0);
+}
+
+/*HEM*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 1.25rem;
+    padding: 2.5rem;
+}
+
+.left-box,
+.center-box,
+.right-box {
+    padding: 1.25rem;
+    border: 0.0625rem solid #444444;
+}
+
+.left-box,
+.right-box {
+    background-color: #222222;
+}
+
+.center-box {
+    background-color: #333333;
+    text-align: center;
+}
+
+.center-box img {
+    width: 100%;
+    max-width: 18.75rem;
+    height: auto;
+    margin: 1rem 0;
+}
+
+.right-box ul {
+    padding-left: 1.25rem;
+}
+
+.button-box {
+    margin-top: 1rem;
+}
+
+/*TOPP 10*/
+.hero {
+    text-align: center;
+    padding: 40px;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px;
+}
+
+.movie-card {
+    border: 1px solid #444;
+    background: #222;
+    padding: 20px;
+    text-align: center;
+}
+
+.movie-card img {
+    width: 100%;
+    max-width: 250px;
+}
+
+.toplist {
+    padding: 40px;
+}
+
+/*RECENSIONER*/
+.review-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    padding: 40px;
+}
+
+/* TABELL */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+}
+
+/* Zebra-striping */
+tr:nth-child(even) {
+    background-color: #222;
+}
+
+/* Reviews */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.review-card {
+    background: #222;
+    padding: 20px;
+    border: 1px solid #444;
+    transition: 0.3s;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Recensent */
+.reviewer {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+/* Syskon-selektor */
+.review-card p + .reviewer {
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
+
+/*TRAILERS*/
+.trailer-hero {
+    text-align: center;
+    padding: 2.5rem;
+}
+
+.trailer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.875rem;
+    padding: 2.5rem;
+}
+
+.trailer-card {
+    background-color: #222222;
+    border: 0.0625rem solid #444444;
+    padding: 1.25rem;
+    text-align: center;
+    transition: transform 0.3s,
+        background-color 0.3s;
+}
+
+.trailer-card:hover {
+    transform: scale(1.03);
+    background-color: hsl(0, 0%, 18%);
+}
+
+.video-box {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin: 1rem 0;
+}
+
+.video-box iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+    left: 0;
+    top: 0;
+}
+
+/*RÖSTA-SIDAN */
+.vote-layout {
+    padding: 2.5rem;
+}
+
+.vote-hero {
+    text-align: center;
+    background-color: #222222;
+    border: 0.0625rem solid #444444;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.form-section {
+    max-width: 56.25rem;
+    margin: 0 auto;
+    background-color: #1b1b1b;
+    border: 0.0625rem solid #444444;
+    padding: 2rem;
+}
+
+.vote-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.vote-form fieldset {
+    border: 0.0625rem solid #555555;
+    padding: 1.5rem;
+}
+
+.vote-form legend {
+    color: #f4c542;
+    font-weight: 700;
+    padding: 0 0.5rem;
+}
+
+.vote-form label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.vote-form input,
+.vote-form select,
+.vote-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 0.0625rem solid #666666;
+    border-radius: 0.25rem;
+    background-color: #111111;
+    color: white;
+    box-sizing: border-box;
+}
+
+.vote-form input:focus,
+.vote-form select:focus,
+.vote-form textarea:focus {
+    outline: 0.125rem solid #f4c542;
+    background-color: #222222;
+}
+
+.vote-form input:required {
+    border-left: 0.25rem solid #f4c542;
+}
+
+.vote-form input[type="radio"],
+.vote-form input[type="checkbox"],
+.vote-form input[type="color"] {
+    width: auto;
+}
+
+.radio-group,
+.checkbox-group,
+.terms-box {
+    margin-top: 0.5rem;
+}
+
+.radio-group label,
+.checkbox-group label,
+.terms-box label {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.form-question {
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.vote-form input[type="submit"],
+.vote-form input[type="reset"] {
+    cursor: pointer;
+    font-weight: 700;
+    border: none;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.vote-form input[type="submit"] {
+    background-color: #f4c542;
+    color: black;
+}
+
+.vote-form input[type="reset"] {
+    background-color: hsl(0, 0%, 25%);
+    color: white;
+}
+
+.vote-form input[type="submit"]:hover,
+.vote-form input[type="reset"]:hover {
+    transform: scale(1.04);
+}
+
+.vote-form input[type="submit"]:active,
+.vote-form input[type="reset"]:active {
+    transform: scale(0.97);
+}
+
+.vote-form textarea::placeholder,
+.vote-form input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+fieldset + fieldset {
+    margin-top: 1rem;
+}
+
+#form-message {
+    color: #f4c542;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/*ANIMATIONER*/
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(1.25rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 768px) {
+
+    .trailer-grid,
+    .reviews-grid,
+    .movie-grid,
+    .grid-container,
+    .review-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .menu li {
+        display: block;
+        margin: 0.75rem 0;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+}
